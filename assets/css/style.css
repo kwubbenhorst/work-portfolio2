@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*theme colours have been selected to match the hero banner image using the red ketchup color picker.  This banner image may be updated later is a higher res profile picture can be obtained, so storing the colours in variables makes for easy future maintenance.*/
+:root {
+    --white: #FFFFFF;
+    --light:#CAEDFF;
+    --medium: #0F99F4;
+    --twilight: #065CE3;
+    --dark: #0322C8;
+    --black: #000000;
+}
+
+body {
+    background-color: var(--light);
+}
+
+/*relative positioning allows for layering of the absolutely positioned name element on top of the header.  93px seems large for a banner height, but this value seemed to provide the best centering with align self: center on the name element.  It was purely eye-balled.*/
+#header {
+    padding: 20px 20px 20px 0px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--dark);
+    color: var(--white);
+    position: relative;
+    width: 100%;
+    height: 93px;
+    display: flex;
+}
+
+/*I have added a font size and weight change to this element with the media query when the h1 began to look too big relative to the header height*/
+#name {
+    background-color: var(--medium);
+    padding: 10px;
+    position: absolute;
+    align-self: center;
+}
+
+/*The value of 62px from the left as a value positioning the links is going to change with media queries.  Basically every time I noticed that the links were taking up two lines (eg. "about" on one line, "me" on the line below) I changed the left: value so they would appear again inline*/
+#nav-links {
+    padding-top: 15px;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    list-style-type: none;
+    position: absolute;
+    left: 62%;
+    bottom: 1px;           
+}
+
+/*The value is going to be adjusted downward with media queries at certain break-points.  Again, I just use inspect's responsivity toggle to eye-ball what seemed to look best.*/
+#nav-links li {
+    margin: 25px;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+/*relative positioning is given to the hero element so the absolutely positioned h2 can sit on top*/
+#hero {
+    position: relative;
+}
+
+/*note that there is an empty figure element in the HTML.  This is where the image source is being provided.*/
+#hero-img {
+    background-image:url('../images/banner-img-profile-pic.jpg');
+    background-position: center;
+    background-size:cover;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/*In place of an alt description when giving the image source in html, I have used an invisible figcaption to provide for accessibility labelling*/
+figcaption {
+    display: none;
+}
+
+/*Font size and weight will be explicitly given to this element at a certain break-point to override the default h2 settings*/
+#hero h2 {
+    position: absolute;
+    top: 66%;
+    bottom: 33%;
+    left: 75%;
+    height: 45px;
+    background-color: var(--dark);
+    padding: 11px; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:#FFFFFF;
+    margin-bottom: 5px;  
+}
+
+/*The following four classes control multiple elements to ensure the sections behave with uniformity*/ 
+.container {
+    display: flex;
+    width: 95%;
+    margin: 30px;
+    background-color: var(--white);
+}
+
+.heading-container {
+    display: inline;
+    width: 15%;
+    padding: 20px;
+}
+
+.content-container {
+    display: inline;
+    width: 85%;
+    border-left: 5px solid var(--twilight);
+    padding: 15px;
+    margin: 15px 0px;
+}
+
+.section-heading { 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--twilight);
+    margin: 4% 0% 0% 20%;
+    text-align: center; 
+}
+
+#about-me-content {
+    font-family: 'Trebuchet MS', Calibri, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    background-color: var(--white);
+    color: var(--twilight);
+    margin: 10px;
+}
+
+/*The following 13 rules control different aspects of the projects showcase, the most complicated part of the application's layout.  Ideally the application is viewed on a large screen where the feature image and sits centrally within the viewport width and with equal white-space either side of it within the content-container, and the two smaller cards aligned underneath.  At some screen dimensions this will not be the case.  The biggest adjustment with a media query takes place at the 1066 viewport width breakpoint.  Here the cards are resized to 2/3s of their originally coded dimensions*/  
+#top-row-container {
+    width: 800px;
+    height: 500px;
+    margin: 10px;
+}
+
+#feature-card {
+    width: 800px;
+    text-align: center;
+    position: relative;
+    margin-left: 18%;
+    height: 500px; 
+}
+
+.card-header {
+    background-color: var(--twilight);
+    color: var(--white);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    padding: 10px;
+}
+
+.main-label {
+    font-size: 14px;
+}
+
+.secondary-label {
+    font-size: 11px;   
+}
+
+#feature-card-header {
+    margin: 35px 0px 0px 25px;
+    width: 180px;
+}
+  
+#feature-card img {
+    width: 750px;
+    height: 485px;
+}
+
+#bottom-row-container {
+    width: 800px;
+    height: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bottom-row-card {
+    width: 400px;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+#bottom-left-card {
+    margin-left: 20%;
+}
+
+#bottom-left-card-header {
+    margin: 35px 0px 0px 10px;
+    width: 150px;    
+}
+
+#bottom-right-card-header {
+    margin: 35px 0px 0px 10px;
+    width: 150px;   
+}
+
+.bottom-row-card img {
+    width: 354px;
+    height: 300px;
+    margin: 0px 10px 0px 10px; 
+}
+
+/* Rules for the following four elements relate to content in the footer/contact Me section of the page.  At certain viewport widths the youtube link and the phone number are inclined to crowd one another.  Margin values have been adjusted with media queries to keep the links in this section correctly spaced*/
+#contact-links-container {
+    line-height: 1.2;
+    color: var(--twilight);
+    float: right;    
+}
+
+#contact-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0px 30px;   
+}
+
+#contact-links li {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    width: 50%;
+}
+
+#contact-links li a {
+    color: var(--twilight);
+    text-decoration: none;
+    margin-left: 60px;
+}
+
+/* Media queries.  Note that most of the adjustments take place for screens larger than the typical first breakpoint of 992px.  After the resizing of the images in the projects showcase no adjustments had to be made for the 768 and 576 viewport widths*/
+@media screen and (max-width: 1261px) {
+    #nav-links {
+        left: 55%;
+    }
+    #feature-card {
+        margin-left: 10%;
+    }
+    #bottom-left-card {
+        margin-left: 12%;
+    }
+}
+
+@media screen and (max-width: 1137px) {
+    #feature-card {
+        margin-left: 4%;
+    }
+    #bottom-left-card {
+        margin-left: 6%;
+    }
+}
+
+@media screen and (max-width: 1078px) {
+    #feature-card {
+        margin-left: 1%;
+    }
+    #bottom-left-card {
+        margin-left: 3%;
+    }
+}
+
+@media screen and (max-width: 1066px) {
+
+    #name {
+        padding: 5px;
+        font-size: 28px;
+        font-weight: bolder;
+    }
+    
+    #nav-links {
+        padding-top: 15px;
+        left: 55%;           
+    }
+    
+    #nav-links li {
+        margin: 20px;
+    }
+
+    #top-row-container {
+        width: 533px;
+        height: 333px;
+    }
+    #feature-card {
+        width: 533px;
+        margin-left: 18%;
+        height: 333px; 
+    }
+    
+    #feature-card-header {
+        margin: 25px 0px 0px 17px;
+        width: 180px;
+    }
+      
+    #feature-card img {
+        width: 500px;
+        height: 323px;
+    }
+
+    .main-label {
+        font-size: 12px;
+    }
+    
+    .secondary-label {
+        font-size: 9px;   
+    }
+    
+    #bottom-row-container {
+        width: 533px;
+        height: 200px;
+    }
+    
+    .bottom-row-card {
+        width: 267px;
+        padding: 10px;
+    }
+    
+    #bottom-left-card {
+        margin-left: 19%;
+    }
+    
+    #bottom-left-card-header {
+        margin: 15px 0px 0px 10px;
+        width: 100px;    
+    }
+    
+    #bottom-right-card-header {
+        margin: 15px 0px 0px 10px;
+        width: 100px;   
+    }
+    
+    .bottom-row-card img {
+        width: 236px;
+        height: 200px;
+        margin: 0px 10px 0px 10px; 
+    }
+
+    #contact-links li a {
+    margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1008px) {
+    #hero h2 {
+        font-size: 20px;
+        font-weight: bolder;  
+    }
+}

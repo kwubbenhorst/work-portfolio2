@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Karla Wubbenhorst Work Portfolio</title> 
+        <link rel="reset" href="./assets.css/reset.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+   </head>
+
+   <body>
+    <!-- Header section consisting of an h1 name, "Karla Wubbenhorst" and three navigation links -->
+        <header id="header">
+            <h1 id="name">Karla Wubbenhorst</h1>           
+            <nav>
+                <ul id="nav-links" >
+                    <li>
+                        <a href="#about-me">About Me</a>
+                    </li>
+                    <li>
+                        <a href="#my-work">My Work</a>
+                    </li>
+                    <li>
+                        <a href="#contact-me">Contact Me</a>
+                    </li>
+                    <li>
+                        <a href="assets/WubbenhorstCV.pdf">CV</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero section consisting of a profile picture/banner image and h2 job title, "Full Stack Developer".  Note I have put a display: none on the figcaption in CSS.  It does not show on the screen but hopefully gets picked up by screen readers.  Don't worry about the empty figure element here. Source will be added in CSS. -->
+        <section id="hero">
+            <figure id="hero-img"></figure>
+            <figcaption>Banner with a profile picture of the job candidate and an abstract blue geometric design</figcaption>
+            <h2 id="job-title">Full Stack Developer</h2>
+        </section>
+
+        <!-- The main section consists of two sub-sections, "About Me" and "My Work".  Within each subsection there is heading container and a content container.  The content container for the My Work subsection is further divided into two rows, the top row containing a feature card, and the bottom row containing two standard cards -->
+        <main>
+            <section id="about-me-container" class="container">
+                <header id="about-me-heading-container" class="heading-container">
+                    <h2 id="about-me" class="section-heading">About Me</h2>
+                </header>
+                <article id="about-me-content-container" class="content-container">
+                    <p id="about-me-content">Full stack development is quite a career swerve from what I was doing before: pastoral ministry. During my 10  
+                years of post-secondary education in classics and divinity, my 4 years of university teaching in theology, and 15 years of leading 
+                a congregation in Guelph, Ontario, I acquired many soft skills which transfer well to the work of a full stack developer. My academic 
+                background has given me the love of learning and the knowledge of how to learn — an ongoing part of any role in the constantly evolving 
+                tech field.  My congregational leadership background has honed my skills in communication, collaboration, project management and 
+                organizational systems. It was during my ministry years that I became interested in the power of well-designed tech media as a platform 
+                for The Message and as a first line interface between organizations and their subscribers. At a little beyond mid career I took on the 
+                challenge of learning to code and while my learning will continue forever, I look forward to launching myself in this new career and 
+                tailoring my growth to what is needed in my role at your company.  I enjoy travelling, writing and gardening, and am happy to travel for 
+                work or work remotely.</p>
+                </article>
+            </section>
+
+            <section id="my-work-container" class="container">
+                <header id="my-work-heading-container" class="heading-container">
+                    <h2 id="my-work" class="section-heading">My Work</h2>
+                </header>
+                <container id="my-work-project-showcase" class="content-container">
+                    <div id="top-row-container">
+                        <div id="feature-card">
+                            <header id="feature-card-header" class="card-header">
+                                <p class="main-label">Foodie App</p>
+                                <p class="secondary-label">HTML/CSS/JS</p>
+                            </header>
+                            <figure>
+                                <a href="https://kwubbenhorst.github.io/kitchen_elevation/"><img class="featureImageCard" src="./assets/images/Screenshot 2 landing page.png" role="link" alt="image of salmon, lemons and pasta -- a cooking workspace" /></a>
+                            </figure>
+                        </div>
+                    </div>
+                    <div id="bottom-row-container">
+                        <div id="bottom-left-card" class="bottom-row-card">
+                            <header id="bottom-left-card-header" class="card-header">
+                                <p class="main-label">Coding Study-Guide</p>
+                                <p class="secondary-label">HTML/CSS/JS</p>
+                            </header>
+                            <figure>
+                                <a href="https://kwubbenhorst.github.io/prework-project/"><img src="./assets/images/study-guide-project-img.jpg" role="link" alt="study hall image signifying the study guide project" /></a>
+                            </figure>
+                        </div>
+                        <div id="bottom-right-card" class="bottom-row-card">
+                            <header id="bottom-right-card-header" class="card-header">
+                                <p class="main-label">SEO update for Horiseon</p>
+                                <p class="secondary-label">HTML/CSS</p>
+                            </header>
+                            <figure>
+                                <a href="https://kwubbenhorst.github.io/horiseon-seo/"><img class="featureImageCard" src="./assets/images/horiseon-project-img.jpg" role="link" alt="marketing meeting image drawn from the horiseon project" /></a> 
+                            </figure>
+                        </div>
+                    </div>
+                </container>
+            </section>                    
+        </main>
+
+        <!-- Footer section mimics the structure of the main section with a division for the Contact Me heading and for the content.  In this case the content consists of five contact links (actually 4, the phone number is a p, not a link) -->
+        <footer>
+            <section id="contact-me-container" class="container">
+                <header id="contact-me-heading-container" class="heading-container">
+                    <h2 id="contact-me" class="section-heading">Contact Me</h2>
+                </header>
+                <div id="contact-links-container" class="content-container">
+                    <ul id="contact-links">
+                        <li>
+                            <a href="mailto:kwubbenhorst@gmail.com">Email</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/kwubbenhorst">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/karla-wubbenhorst-846b6b294">Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/@karlawubbenhorst6383">Youtube</a>
+                        </li>
+                        <li>
+                            <p>+1 519 803 0075</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </footer>
+    </body>
+
+</html>
