@@ -135,17 +135,20 @@ figcaption {
 
 /*The following 13 rules control different aspects of the projects showcase, the most complicated part of the application's layout.  Ideally the application is viewed on a large screen where the feature image and sits centrally within the viewport width and with equal white-space either side of it within the content-container, and the two smaller cards aligned underneath.  At some screen dimensions this will not be the case.  The biggest adjustment with a media query takes place at the 1066 viewport width breakpoint.  Here the cards are resized to 2/3s of their originally coded dimensions*/  
 #top-row-container {
-    width: 800px;
-    height: 500px;
-    margin: 10px;
+    display: flex;
+    justify-content: center;
+
 }
 
 #feature-card {
-    width: 800px;
+    width: 60%;
+    /*
     text-align: center;
+    */
     position: relative;
-    margin-left: 18%;
-    height: 500px; 
+
+    height: 500px;
+     
 }
 
 .card-header {
@@ -165,6 +168,9 @@ figcaption {
 }
 
 #feature-card-header {
+    position: absolute;
+    left: -25px;
+    top: 250px;
     margin: 35px 0px 0px 25px;
     width: 180px;
 }
@@ -174,41 +180,54 @@ figcaption {
     height: 485px;
 }
 
-#bottom-row-container {
+.row-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+/*
     width: 800px;
     height: 300px;
     margin-bottom: 20px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
-
-.bottom-row-card {
-    width: 400px;
+*/
+.row-card {
     text-align: center;
     position: relative;
-    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; 
+
 }
 
-#bottom-left-card {
-    margin-left: 20%;
+.row-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly on hover */
+  }
+
+.left-card {
+    margin: 0px 0px;   
 }
 
-#bottom-left-card-header {
-    margin: 35px 0px 0px 10px;
+.left-card-header {
+    margin: 237px 0px 0px 0px;
     width: 150px;    
 }
 
-#bottom-right-card-header {
-    margin: 35px 0px 0px 10px;
+.right-card-header {
+    margin: 237px 0px 0px 0px;
     width: 150px;   
 }
 
-.bottom-row-card img {
+
+.row-card img {
     width: 354px;
     height: 300px;
     margin: 0px 10px 0px 10px; 
 }
-
+/*
 /* Rules for the following four elements relate to content in the footer/contact Me section of the page.  At certain viewport widths the youtube link and the phone number are inclined to crowd one another.  Margin values have been adjusted with media queries to keep the links in this section correctly spaced*/
 #contact-links-container {
     line-height: 1.2;
@@ -236,7 +255,19 @@ figcaption {
     margin-left: 60px;
 }
 
+@media screen and (max-width: 767px) {
+  
+  #top-row-container {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+}
+
+
+
 /* Media queries.  Note that most of the adjustments take place for screens larger than the typical first breakpoint of 992px.  After the resizing of the images in the projects showcase no adjustments had to be made for the 768 and 576 viewport widths*/
+/*
 @media screen and (max-width: 1261px) {
     #nav-links {
         left: 55%;
@@ -244,7 +275,7 @@ figcaption {
     #feature-card {
         margin-left: 10%;
     }
-    #bottom-left-card {
+    .left-card {
         margin-left: 12%;
     }
 }
@@ -253,7 +284,7 @@ figcaption {
     #feature-card {
         margin-left: 4%;
     }
-    #bottom-left-card {
+    .left-card {
         margin-left: 6%;
     }
 }
@@ -262,7 +293,7 @@ figcaption {
     #feature-card {
         margin-left: 1%;
     }
-    #bottom-left-card {
+    .left-card {
         margin-left: 3%;
     }
 }
@@ -312,31 +343,31 @@ figcaption {
         font-size: 9px;   
     }
     
-    #bottom-row-container {
+    .row-container {
         width: 533px;
         height: 200px;
     }
     
-    .bottom-row-card {
+    .row-card {
         width: 267px;
         padding: 10px;
     }
     
-    #bottom-left-card {
+    .left-card {
         margin-left: 19%;
     }
     
-    #bottom-left-card-header {
+    .left-card-header {
         margin: 15px 0px 0px 10px;
         width: 100px;    
     }
     
-    #bottom-right-card-header {
+    .right-card-header {
         margin: 15px 0px 0px 10px;
         width: 100px;   
     }
     
-    .bottom-row-card img {
+    .row-card img {
         width: 236px;
         height: 200px;
         margin: 0px 10px 0px 10px; 
@@ -353,3 +384,4 @@ figcaption {
         font-weight: bolder;  
     }
 }
+*/
